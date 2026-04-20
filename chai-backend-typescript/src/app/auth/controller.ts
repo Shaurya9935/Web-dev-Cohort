@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { signupPayloadModel } from './models'
+import { signinPayloadModel, signupPayloadModel } from './models'
 import { randomBytes, createHmac } from 'node:crypto'
 import { db } from '../../db'
 import { usersTable } from '../../db/schema'
@@ -37,6 +37,15 @@ class AutheticationController {
         return res.status(201).json({
             message: "user has been created successfully",
             data: {id: result?.id}
+        })
+    }
+
+    public async handleSignin(req: Request, res: Response){
+       const validationResult = await signinPayloadModel.safeParseAsync(req.body)
+
+       if(validationResult.error) return res.status(400).json({
+            message: 'body validation falied', 
+            error: validationResult.error.issues
         })
     }
 }
