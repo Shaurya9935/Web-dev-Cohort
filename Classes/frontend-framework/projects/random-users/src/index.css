@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --bg-1: #071023;
+  --muted: #9aa6b2;
+  --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  --card-bg: #0b1220;
+  --card-text: #e6eef8;
+  --accent-ring: rgba(99,102,241,0.12);
+}
+
+body {
+  background: radial-gradient(ellipse at top left, #071023 0%, #000000 60%);
+  color: #e6eef8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Card animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px) scale(0.995); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.card {
+  animation: fadeUp 360ms cubic-bezier(.2,.9,.2,1) both;
+  position: relative;
+  z-index: 0;
+  transform-origin: center;
+  will-change: transform;
+  background: var(--card-bg);
+  color: var(--card-text);
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 3px solid var(--accent-ring);
+}
+
+.view-btn {
+  font-weight: 600;
+}
+
+.details-panel {
+  position: sticky;
+  top: 28px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.userlist h2 {
+  margin: 0;
+}
+
+.userlist p {
+  margin: 0;
+}
+
+.card img {
+  transition: transform 0.28s ease;
+}
+.card:hover img { transform: rotate(-4deg) scale(1.02); }
+
+/* Prevent overlap by raising hovered card above siblings */
+.card:hover {
+  z-index: 50;
+}
+
+/* Small helpers */
+.text-muted { color: var(--muted); }
