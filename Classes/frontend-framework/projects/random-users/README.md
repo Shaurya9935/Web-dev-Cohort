@@ -1,16 +1,133 @@
-# React + Vite
+# Random Users Profile App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based user profile application that fetches random users from the Random Users API and displays them in responsive profile cards with detailed user information.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Fetches random users from API
+* Displays users in responsive cards
+* View detailed profile information
+* Modern UI using Tailwind CSS
+* Loading and error handling
+* Responsive design
+* Dynamic user selection
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+* React
+* Tailwind CSS
+* JavaScript (ES6+)
+* Fetch API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## API Used
+
+Random Users API:
+
+```txt
+https://api.freeapi.app/api/v1/public/randomusers
+```
+
+---
+
+## Project Structure
+
+```txt
+src/
+ ├── App.jsx
+ ├── main.jsx
+ ├── index.css
+```
+
+---
+
+## Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-link>
+```
+
+### 2. Navigate to project folder
+
+```bash
+cd project-name
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start development server
+
+```bash
+npm run dev
+```
+
+---
+
+## Features Implemented
+
+### User Cards
+
+* User image
+* Full name
+* Email address
+* View details button
+
+### User Details Panel
+
+* Large profile image
+* Full name
+* Gender
+* Complete address
+* Age
+* Phone number
+
+### React Concepts Used
+
+* useState
+* useEffect
+* Fetch API
+* Conditional Rendering
+* Event Handling
+* Mapping Arrays
+* Component-based UI
+
+---
+
+## UI Preview
+
+```txt
+------------------------------------------------
+| USER CARDS GRID | USER DETAIL PANEL          |
+|                  |                            |
+| [card] [card]   |  Profile Image             |
+| [card] [card]   |  Name                      |
+| [card] [card]   |  Email                     |
+|                  |  Phone                     |
+------------------------------------------------
+```
+
+---
+
+## Future Improvements
+
+* Search functionality
+* Pagination
+* Dark mode
+* User filtering
+* React Router integration
+* Better animations
+
+---
+
+## Author
+
+Shaurya Gupta
